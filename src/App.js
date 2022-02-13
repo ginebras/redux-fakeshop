@@ -10,11 +10,13 @@ export default function App() {
   return (
     <div className="app">
       <Header />
-      <Routes>
-        <Route exact path="/" element={<ProductListing />} />
-        <Route exact path="/edit/:id" element={<ProductDetails />} />
-        <Route>404 Not found</Route>
-      </Routes>
+      <div className="mt-5">
+        <Routes>
+          <Route exact path="/" element={<ProductListing />} />
+          <Route exact path="/product/:id" element={<ProductDetails />} />
+          <Route>404 Not found</Route>
+        </Routes>
+      </div>
     </div>
   );
 }
