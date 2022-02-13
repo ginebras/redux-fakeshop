@@ -20,7 +20,13 @@ export default function ProductListing() {
 
   return (
     <div className="ui grid container mt-5">
-      <ProductComponent />
+      {products ? (
+        products.map((product, index) => (
+          <ProductComponent product={product} key={product.id} />
+        ))
+      ) : (
+        <h2>Loading...</h2>
+      )}
     </div>
   );
 }
