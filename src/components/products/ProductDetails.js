@@ -8,7 +8,6 @@ export default function ProductDetails() {
   const { productId } = useParams();
   const dispatch = useDispatch();
   const { selectedProduct } = useSelector((state) => state.allProducts);
-  const { image, title, price, category, description } = selectProduct;
 
   useEffect(() => {
     if (productId && productId !== '') fetchGetProduct();
@@ -32,15 +31,19 @@ export default function ProductDetails() {
               <div className="ui vertical divider">AND</div>
               <div className="middle aligned row">
                 <div className="column lp">
-                  <img className="ui fluid image" src={image} />
+                  <img className="ui fluid image" src={selectedProduct.image} />
                 </div>
                 <div className="column rp">
-                  <h1>{title}</h1>
+                  <h1>{selectedProduct.title}</h1>
                   <h2>
-                    <a className="ui teal tag label">${price}</a>
+                    <a className="ui teal tag label">
+                      ${selectedProduct.price}
+                    </a>
                   </h2>
-                  <h3 className="ui brown block header">{category}</h3>
-                  <p>{description}</p>
+                  <h3 className="ui brown block header">
+                    {selectedProduct.category}
+                  </h3>
+                  <p>{selectedProduct.description}</p>
                   <div className="ui vertical animated button" tabIndex="0">
                     <div className="hidden content">
                       <i className="shop icon"></i>
