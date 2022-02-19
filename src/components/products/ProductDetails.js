@@ -23,7 +23,7 @@ export default function ProductDetails() {
   return (
     <div style={{ marginTop: '5rem' }}>
       <div className="ui grid container">
-        {Object.keys(selectedProduct) === 0 ? (
+        {Object.keys(selectedProduct).length === 0 ? (
           <div>...Loading</div>
         ) : (
           <div className="ui placeholder segment">
