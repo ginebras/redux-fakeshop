@@ -13,7 +13,7 @@ export const productReducer = (state = initialState, action) => {
         products: action.payload,
       };
 
-    case actionsTypes.SELECTED_PRODUCT:
+    case actionsTypes.SELECT_PRODUCT:
       return {
         ...state,
         selectedProduct: action.payload,
