@@ -20,7 +20,7 @@ export default function ProductDetails() {
   };
 
   return (
-    <div className="mt-5">
+    <div style={{ marginTop: '5rem' }}>
       <h4>hola</h4>
     </div>
   );
