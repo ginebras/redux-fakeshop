@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ProductComponent({ product }) {
   const { id, title, category, price, image, description, rating } = product;
@@ -9,7 +10,9 @@ export default function ProductComponent({ product }) {
           <img src={image} alt={title} />
         </div>
         <div class="content">
-          <a class="header">{title}</a>
+          <Link class="header" to={`/product/${id}`}>
+            {title}
+          </Link>
           <div class="meta">
             <span class="date">{category}</span>
           </div>

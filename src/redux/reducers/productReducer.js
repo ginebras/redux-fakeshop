@@ -2,6 +2,7 @@ import { actionsTypes } from '../contants/actions-types';
 
 const initialState = {
   products: [],
+  selectedProduct: [],
 };
 
 export const productReducer = (state = initialState, action) => {
@@ -10,6 +11,12 @@ export const productReducer = (state = initialState, action) => {
       return {
         ...state,
         products: action.payload,
+      };
+
+    case actionsTypes.SELECTED_PRODUCT:
+      return {
+        ...state,
+        selectedProduct: action.payload,
       };
 
     default:
